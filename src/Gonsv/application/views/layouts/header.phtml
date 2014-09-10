@@ -1,0 +1,14 @@
+<?php
+    if(Zend_Auth::getInstance()->hasIdentity()){
+        $usuario = Zend_Auth::getInstance()->getIdentity();
+    }
+?>
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+				Header
+			</div>
+		</div>
+	</div>
+</header>

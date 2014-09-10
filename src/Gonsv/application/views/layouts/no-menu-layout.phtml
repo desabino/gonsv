@@ -1,0 +1,41 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?=$this->doctype();?>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <?=$this->headTitle();?>
+		
+        <!-- Shortcut Icon -->
+        <link type="image/x-icon" href="/img/favicon.png" rel="shortcut icon" />
+        <!-- Shortcut Icon -->
+		
+        <!-- Stylesheet -->
+        <?=$this->headLink();?>
+        <!-- end Stylesheet -->
+		
+        <!-- Scripts -->
+        <?=$this->headScript();?>
+        <!-- end Scripts -->
+    </head>
+    <body>
+        <div class="container-fluid">			
+            <div class="row">
+                <div class="col-xs-12">
+					
+                    <!-- Mensagem de alerta -->
+                    <?php if($this->alert != '' || is_array($this->alert)): ?>
+                        <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
+                    <?php endif; ?>
+					
+                    <!-- Conteúdo -->
+                    <?=$this->layout()->content; ?>
+                    
+                    <?php echo $this->partial('footer.phtml');?>
+					
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

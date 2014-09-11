@@ -1,11 +1,11 @@
 class mysql {
   include '::mysql::server'
   
-  mysql::db { 'dev_baseproject':
-    user     => 'dev',
-    password => '12dev34',
+  mysql::db { 'sabino_dev_gonsv':
+    user     => 'sabino_dev',
+    password => '12devssw34',
     host     => 'localhost',
-    sql      => '/vagrant/data/dev_baseproject.sql',
+    sql      => '/vagrant/data/sabino_dev_gonsv.sql',
     grant    => ['ALL'],
   }
 }

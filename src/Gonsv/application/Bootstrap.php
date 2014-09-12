@@ -21,6 +21,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         return $logger;
     }
     
+    // Carrega configurações básicas
+    /*
+    static public function _initConfigFile()
+    {
+    	$file   = APPLICATION_PATH . '/configs/application.ini';
+    	$config = new Zend_Config_Ini($file, APPLICATION_ENV);
+    	Zend_Registry::set('application', $config);
+    }
+    */
+    
     // Carrega configurações da ACL
     protected function _initLoadAclIni()
     {
@@ -91,15 +101,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
              ->setSeparator(' :: ');
 		
         // Definindo css default
-        $view->headLink()->appendStylesheet('/css/util/bootstrap.min.css');
-        $view->headLink()->appendStylesheet('/css/util/bootstrap-theme.min.css');
-        $view->headLink()->appendStylesheet('/css/site/styles.css');
+        $view->css = array('/css/util/bootstrap.min.css',
+        				   '/css/util/bootstrap-theme.min.css',
+        				   '/css/site/styles.css'
+        				  );
 		
         // Definindo js default
-        $view->headScript()->appendFile('/js/jquery/jquery.js');
-        $view->headScript()->appendFile('/js/util/bootstrap.min.js');
-        $view->headScript()->appendFile('/js/jquery/mask.min.js');
-        $view->headScript()->appendFile('/js/site/init.js');
+        $view->js = array ('/js/jquery/jquery.js',
+        				   '/js/util/bootstrap.min.js',
+        				   '/js/jquery/mask.min.js',
+        				   '/js/site/init.js'
+        				  );
     }
 
     // Locale

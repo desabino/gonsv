@@ -1,0 +1,6 @@
+<?php
+	foreach ((array)$this->js as $js):
+		$js = $this->baseUrl($js);
+		$this->headScript()->appendFile($js);
+	endforeach;
+	echo $this->headScript();

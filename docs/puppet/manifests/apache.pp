@@ -6,6 +6,7 @@
         mpm_module    => 'prefork',
     }
     
+    include apache::mod::headers
     apache::mod {'php5':}
     apache::mod {'rewrite':}
     
@@ -14,6 +15,7 @@
         priority   => '01',
         port       => '80',
         docroot    => '/vagrant/src/Gonsv/public',
+        #headers    => 'set Access-Control-Allow-Origin "*"',
         override   => 'All',
         setenv     => ['APPLICATION_ENV development'],
     }

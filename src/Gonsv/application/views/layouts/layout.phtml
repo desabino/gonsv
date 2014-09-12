@@ -2,47 +2,62 @@
 <?=$this->doctype();?>
 <html lang="pt-BR">
     <head>
+    	<!-- META TAGS -->
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<!-- ENDS META TAGS -->
+    	
         <?=$this->headTitle();?>
 		
-        <!-- Shortcut Icon -->
-        <link type="image/x-icon" href="/img/favicon.png" rel="shortcut icon" />
-        <!-- Shortcut Icon -->
+        <!-- SHORTCUT ICON -->
+        <link rel="shortcut icon" type="image/x-icon" href="<?=$this->baseUrl('/img/site/favicon.png'); ?>" />
+        <!-- ENDS SHORTCUT ICON -->
 		
-        <!-- Stylesheet -->
-        <?=$this->headLink();?>
-        <!-- end Stylesheet -->
+        <!-- STYLESHEET -->
+        <?=$this->partial('css.phtml', array('css' => $this->css)); ?>
+        <!-- ENDS STYLESHEET -->
 		
-        <!-- Scripts -->
-        <?=$this->headScript();?>
-        <!-- end Scripts -->
+        <!-- SCRIPT -->
+        <?=$this->partial('js.phtml', array('js' => $this->js)); ?>
+        <!-- ENDS SCRIPT -->
     </head>
     <body>
-        <?php echo $this->partial('header.phtml');?>
+        <!-- HEADER -->
+        <?=$this->partial('header.phtml');?>
+        <!-- ENDS HEADER -->
+        
+        <br>
+        <pre>
+        origin: 
+        <?php echo $_SERVER['HTTP_ORIGIN'];?>
+        <?php print_r($_SERVER)?>
+        </pre>
+        <br>
         
         <div class="container">			
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
 
-                    <!-- Título da página -->
+                    <!-- PAGE TITLE -->
                     <div class="page-header">
                         <h1><?=$this->pageheader;?><?php if($this->pagesubheader != ''):?> <small><?=$this->pagesubheader;?></small><?php endif;?></h1>
                     </div>
 
-                    <!-- Mensagem de alerta -->
+                    <!-- ALERT MESSAGE -->
                     <?php if($this->alert != '' || is_array($this->alert)): ?>
                     <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
                     <?php endif; ?>
 					
-                    <!-- Conteúdo -->
+                    <!-- CONTENT -->
                     <?=$this->layout()->content; ?>
 					
                 </div>
             </div>
         </div>
         
-        <?php echo $this->partial('footer.phtml');?>
+        <!-- FOOTER -->
+        <?=$this->partial('footer.phtml');?>
+        <!-- ENDS FOOTER -->
     </body>
 </html>

@@ -12,7 +12,6 @@ class IndexController extends Zend_Controller_Action
  
     public function indexAction()
     {
-    	// CSS
-		$this->view->headLink()->appendStylesheet('');
+    	
     }
 }

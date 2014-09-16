@@ -21,16 +21,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         return $logger;
     }
     
-    // Carrega configurações básicas
-    /*
-    static public function _initConfigFile()
-    {
-    	$file   = APPLICATION_PATH . '/configs/application.ini';
-    	$config = new Zend_Config_Ini($file, APPLICATION_ENV);
-    	Zend_Registry::set('application', $config);
-    }
-    */
-    
     // Carrega configurações da ACL
     protected function _initLoadAclIni()
     {

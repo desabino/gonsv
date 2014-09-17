@@ -1,0 +1,39 @@
+<div class="row">
+	<!-- LISTA DE MINISTÉRIOS -->
+	<div class="col-xs-12 col-sm-12 col-md-6">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Ministério</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($this->ministerios as $key => $ministerio): ?>
+				<tr>
+					<td><?=$ministerio['ministerio_nome'];?></td>
+					<td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button></td>
+					<td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+				</tr>
+				<?php endforeach;?>
+			</tbody>
+		</table>
+	</div>
+	<!-- ENDS LISTA DE MINISTÉRIOS -->
+	
+	<!-- NOVO MINISTÉRIO -->
+	<div class="col-xs-12 col-sm-12 col-md-6">
+		<h3>Novo ministério</h3>
+		<form action="<?=$this->form->getAction();?>" name="<?=$this->form->getName();?>" method="<?=$this->form->getMethod();?>" role="<?=$this->form->getAttrib('role');?>">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_ministerio_nome->getAttrib('id');?>"><?=$this->form->f_ministerio_nome->getLabel();?></label>
+				<?=$this->form->f_ministerio_nome;?>
+			</div>
+			<div class="text-right">
+				<?=$this->form->submit;?>
+			</div>			
+		</form>
+	</div>
+	<!-- ENDS NOVO MINISTÉRIO -->
+</div>

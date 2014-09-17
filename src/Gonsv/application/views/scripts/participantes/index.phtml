@@ -1,8 +1,13 @@
-		<table>
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-striped">
 			<thead>
         		<tr>
         			<th>Nome</th>
         			<th>Data de Nascimento</th>
+        			<th>Telefone</th>
+        			<th>Celular</th>
+        			<th>E-mail</th>
         		</tr>
         	</thead>
         	<tbody>
@@ -10,7 +15,12 @@
         		<tr>
         			<td><?=$pessoa['nome'];?></td>
         			<td><?=$pessoa['data_nasc'];?></td>
+        			<td><?=$pessoa['telefone'];?></td>
+        			<td><?=$pessoa['celular'];?></td>
+        			<td><?=$pessoa['email'];?></td>
         		</tr>
         		<?php endforeach; ?>
         	</tbody>
         </table>
+	</div>  
+</div>

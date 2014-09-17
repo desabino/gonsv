@@ -27,10 +27,10 @@
         port       => '81',
         override   => 'All',
         docroot    => '/vagrant/src/Static',
-        #directories => {
-        #    path    => '/vagrant/src/Static',
-        #    headers => 'Set Access-Control-Allow-Origin "*"',
-        #},
+        directories => {
+            path    => '/vagrant/src/Static',
+            headers => 'Set Access-Control-Allow-Origin "*"',
+        },
     }
     apache::vhost {'test':
         priority   => '03',

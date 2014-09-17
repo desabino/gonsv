@@ -1,6 +1,6 @@
 <?php
 
-// Produto
+// Pessoas (Participantes)
 
 class Model_DbTable_Pessoas extends Zend_Db_Table_Abstract
 {

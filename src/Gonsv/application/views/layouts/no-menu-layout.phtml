@@ -27,15 +27,15 @@
             <div class="row">
                 <div class="col-xs-12">
 					
-                    <!-- Mensagem de alerta -->
+                    <!-- MENSAGEM DE ALERTA -->
                     <?php if($this->alert != '' || is_array($this->alert)): ?>
                         <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
                     <?php endif; ?>
+                    <!-- MENSAGEM DE ALERTA -->
 					
-                    <!-- Conteúdo -->
+                    <!-- CONTEÚDO -->
                     <?=$this->layout()->content; ?>
-                    
-                    <?php echo $this->partial('footer.phtml');?>
+                    <!-- CONTEÚDO -->
 					
                 </div>
             </div>

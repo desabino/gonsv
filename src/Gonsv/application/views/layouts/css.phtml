@@ -1,6 +1,6 @@
 <?php
 	foreach((array)$this->css as $css):
-		$css = $this->baseUrl($css);
+		$css = Util_Helper::basePath($css);
 		$this->headLink()->appendStylesheet($css);
 	endforeach;
 	echo $this->headLink();

@@ -21,14 +21,28 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         return $logger;
     }
     
-    // Carrega configurações da ACL
+    /**
+     * Carrega configurações básicas do Site
+     */
+    protected function _initConfigFile()
+    {
+    	$file = APPLICATION_PATH . '/configs/application.ini';
+    	$config = new Zend_Config_Ini($file, APPLICATION_ENV);
+    	Zend_Registry::set('app', $config);
+    }
+    
+    /**
+     * Carrega configurações da ACL
+     */
     protected function _initLoadAclIni()
     {
         $config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/acl.ini');
         Zend_Registry::set('acl', $config);
     }
     
-	// ACL
+    /**
+     * ACL
+     */
     /*
     protected function _initAclControllerPlugin()
     {
@@ -43,7 +57,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
     */
 	
-    // Autoloader (Namespace)
+    /**
+     * Autoloader (Namespace)
+     */
     protected function _initAutoload()
     {
         $autoloader = new Zend_Application_Module_Autoloader(array(
@@ -53,7 +69,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         return $autoloader;
     }
 	
-    // Routes
+    /**
+     * Routes
+     */
     /*
     protected function _initRoutes()
     {
@@ -66,7 +84,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
     */
 	
-    // Navigation
+    /**
+     * Navigation
+     */
     /*
     protected function _initNavigationMenu()
     {	
@@ -80,12 +100,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
     */
 	
-    // Layout (Doctype, etc.)
+    /**
+     * Layout (Doctype, etc.)
+     */
     protected function _initPlaceholders()
     {
         $this->bootstrap('view');
         $view = $this->getResource('view');
-        $view->doctype('HTML5');
+        //$view->doctype('HTML5');
 		
         $view->headTitle('GO Nsa Senhora das Vitórias')
              ->setSeparator(' :: ');
@@ -93,6 +115,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // Definindo css default
         $view->css = array('/css/util/bootstrap.min.css',
         				   '/css/util/bootstrap-theme.min.css',
+                           '/css/util/font-gothic.css',
         				   '/css/site/styles.css'
         				  );
 		
@@ -103,8 +126,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         				   '/js/site/init.js'
         				  );
     }
-
-    // Locale
+    
+    /**
+     * Locale
+     */
     protected function _initLocale()
     {
         $locale   = new Zend_Locale('pt_BR');		
@@ -112,7 +137,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $registry->set('Zend_Locale', $locale);
     }
     
-    // Email Transport
+    /**
+     * Email Transport
+     */
     /*
     protected function _initDefaultEmailTransport()
     {

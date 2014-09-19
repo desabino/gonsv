@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+	background-color: rgba(243, 243, 243, 1);
+}
+
+#page {
+	min-height: 100%;
+	position: relative;
+}
+
+/* ------------------------------
+	HEADER
+------------------------------ */
+header {
+    font-family: "Century Gothic", Tahoma, Arial, Sans Serif;
+}
+    header .navbar {
+        background-color: rgba(33, 58, 133, 1);
+        background-image: none;
+        border: 0 none;
+    }
+        .navbar .navbar-brand,
+        .navbar .navbar-inverse,
+        .navbar-inverse .navbar-nav > li > a {
+            color: rgba(230, 230, 230, 1);
+        }
+        .navbar .navbar-brand {
+            font-size: 1.8em;
+            font-weight: bolder;
+        }
+        .navbar .nav {
+            font-size: 1.15em;
+        }
+            .navbar .nav li {
+                line-height: 50px;
+            }
+        
+	    /* área de login */
+	    .avatar {
+	        background-color: rgba(61, 97, 206, 1);
+	        display: inline-block;
+	        width: 46px;
+	    }
+	    .nav > li > a.dropdown-toggle {
+	        display: inline;
+	    }

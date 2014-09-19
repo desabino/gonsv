@@ -7,7 +7,7 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        
+        //$this->_helper->redirector->gotoUrl('/dashboard');
     }
  
     public function indexAction()

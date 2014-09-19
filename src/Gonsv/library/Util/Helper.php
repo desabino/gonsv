@@ -4,7 +4,7 @@ class Util_Helper extends Zend_Controller_Action_Helper_Abstract
 {
 	static public function BasePath($file, $force = false)
 	{
-		$static = Zend_Registry::get('static');
+		$static = Zend_Registry::get('app')->staticPath;
 		if($static->enable or $force) {
 			// Retirando a barra do final da URL.
 			if(substr($static->folder, -1, 1) == '/') {

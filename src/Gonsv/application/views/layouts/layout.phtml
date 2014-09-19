@@ -23,38 +23,40 @@
         <!-- ENDS SCRIPT -->
     </head>
     <body>
-        <!-- HEADER -->
-        <?=$this->partial('header.phtml');?>
-        <!-- ENDS HEADER -->
-        
-        <div class="container">			
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-
-                    <!-- PAGE TITLE -->
-                    <?php if($this->pageheader != ''):?>
-                    <div class="page-header">
-                        <h1><?=$this->pageheader;?><?php if($this->pagesubheader != ''):?> <small><?=$this->pagesubheader;?></small><?php endif;?></h1>
-                    </div>
-                    <?php endif;?>
-                    <!-- ENDS PAGE TITLE -->
-
-                    <!-- ALERT MESSAGE -->
-                    <?php if($this->alert != '' || is_array($this->alert)): ?>
-                    <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
-                    <?php endif; ?>
-                    <!-- ENDS ALERT MESSAGE -->
-					
-                    <!-- CONTENT -->
-                    <?=$this->layout()->content; ?>
-                    <!-- ENDS CONTENT -->
-					
-                </div>
-            </div>
+    	<div id="page">
+	        <!-- HEADER -->
+	        <?=$this->partial('header.phtml');?>
+	        <!-- ENDS HEADER -->
+	        
+	        <div class="container">			
+	            <div class="row">
+	                <div class="col-xs-12 col-sm-12 col-md-12">
+	
+	                    <!-- PAGE TITLE -->
+	                    <?php if($this->pageheader != ''):?>
+	                    <div class="page-header">
+	                        <h1><?=$this->pageheader;?><?php if($this->pagesubheader != ''):?> <small><?=$this->pagesubheader;?></small><?php endif;?></h1>
+	                    </div>
+	                    <?php endif;?>
+	                    <!-- ENDS PAGE TITLE -->
+	
+	                    <!-- ALERT MESSAGE -->
+	                    <?php if($this->alert != '' || is_array($this->alert)): ?>
+	                    <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
+	                    <?php endif; ?>
+	                    <!-- ENDS ALERT MESSAGE -->
+						
+	                    <!-- CONTENT -->
+	                    <?=$this->layout()->content; ?>
+	                    <!-- ENDS CONTENT -->
+						
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <!-- FOOTER -->
+	        <?=$this->partial('footer.phtml');?>
+	        <!-- ENDS FOOTER -->
         </div>
-        
-        <!-- FOOTER -->
-        <?=$this->partial('footer.phtml');?>
-        <!-- ENDS FOOTER -->
     </body>
 </html>

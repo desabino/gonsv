@@ -4,11 +4,25 @@
     }
 ?>
 <header>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<a href="/">Grupo de Oração Nossa Senhora das Vitórias</a>
+	<nav class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">goNSVitórias</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<div class="avatar"><img src="<?=Util_Helper::basePath('/img/site/person.png');?>" alt=""></div>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							André <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Meus dados</a></li>
+							<li><a href="#">Fazer logoff</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
-	</div>
+	</nav>
 </header>

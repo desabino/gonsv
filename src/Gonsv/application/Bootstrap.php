@@ -114,7 +114,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		
         // Definindo css default
         $view->css = array('/css/util/bootstrap.min.css',
-        				   '/css/util/bootstrap-theme.min.css',
+        				   //'/css/util/bootstrap-theme.min.css',
                            '/css/util/font-gothic.css',
         				   '/css/site/styles.css'
         				  );

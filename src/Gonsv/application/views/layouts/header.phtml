@@ -25,4 +25,14 @@
 			</div>
 		</div>
 	</nav>
+	
+	<!-- PAGE TITLE -->
+    <?php if($this->pageheader != ''):?>
+    <div class="page-header">
+    	<div class="container">
+    		<h1><?=$this->pageheader;?><?php if($this->pagesubheader != ''):?> <small><?=$this->pagesubheader;?></small><?php endif;?></h1>
+    	</div>
+    </div>
+	<?php endif;?>
+    <!-- ENDS PAGE TITLE -->
 </header>

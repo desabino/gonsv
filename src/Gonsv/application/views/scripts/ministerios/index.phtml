@@ -1,6 +1,6 @@
 <div class="row">
 	<!-- LISTA DE MINISTÉRIOS -->
-	<div class="col-xs-12 col-sm-12 col-md-6">
+	<div class="col-xs-12 col-sm-12 col-md-9">
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -22,8 +22,24 @@
 	</div>
 	<!-- ENDS LISTA DE MINISTÉRIOS -->
 	
-	<!-- NOVO MINISTÉRIO -->
-	<div class="col-xs-12 col-sm-12 col-md-6">
+	<!-- OPÇÕES -->
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<div class="box">
+			<div class="box-header"><span class="glyphicon glyphicon-cog"></span> Opções</div>
+			<div class="box-content">
+				<input type="text" placeholder="pesquisar" name="pesquisar" class="form-control">
+				<br>
+				<button class="btn btn-primary btn-block" type="button">
+					<span class="glyphicon glyphicon-plus-sign"></span>
+					&nbsp;&nbsp;Novo Ministério
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- ENDS OPÇÕES -->
+	
+	<!-- NOVO MINISTÉRIO ->
+	<div class="col-xs-12 col-sm-12 col-md-3">
 		<h3>Novo ministério</h3>
 		<form action="<?=$this->form->getAction();?>" name="<?=$this->form->getName();?>" method="<?=$this->form->getMethod();?>" role="<?=$this->form->getAttrib('role');?>">
 			<div class="form-group">

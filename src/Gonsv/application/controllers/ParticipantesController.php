@@ -17,4 +17,9 @@ class ParticipantesController extends Zend_Controller_Action
     	$rs = $this->_db->listaPessoas();
     	$this->view->pessoas = $rs;
     }
+    
+    public function cadastroAction()
+    {
+    	
+    }
 }

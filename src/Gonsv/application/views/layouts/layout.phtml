@@ -25,20 +25,12 @@
     <body>
     	<div id="page">
 	        <!-- HEADER -->
-	        <?=$this->partial('header.phtml');?>
+	        <?=$this->partial('header.phtml', array('pageheader' => $this->pageheader));?>
 	        <!-- ENDS HEADER -->
 	        
 	        <div class="container">			
 	            <div class="row">
 	                <div class="col-xs-12 col-sm-12 col-md-12">
-	
-	                    <!-- PAGE TITLE -->
-	                    <?php if($this->pageheader != ''):?>
-	                    <div class="page-header">
-	                        <h1><?=$this->pageheader;?><?php if($this->pagesubheader != ''):?> <small><?=$this->pagesubheader;?></small><?php endif;?></h1>
-	                    </div>
-	                    <?php endif;?>
-	                    <!-- ENDS PAGE TITLE -->
 	
 	                    <!-- ALERT MESSAGE -->
 	                    <?php if($this->alert != '' || is_array($this->alert)): ?>

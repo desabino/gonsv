@@ -12,6 +12,10 @@ class MinisteriosController extends Zend_Controller_Action
         //$this->usuario = Zend_Auth::getInstance()->getIdentity();
     }
     
+    /**
+     * 
+     * Página principal dos ministérios.
+     */
     public function indexAction()
     {
     	$msg = '';

@@ -17,9 +17,7 @@ class MinisteriosController extends Zend_Controller_Action
      * Página principal dos ministérios.
      */
     public function indexAction()
-    {
-    	$msg = '';
-		
+    {		
 		$form = new Form_Ministerio();
 		$this->view->form = $form;
 		
@@ -57,7 +55,7 @@ class MinisteriosController extends Zend_Controller_Action
 				);
 				$this->view->alert = $alert;
 			}
-		}
+		}		
 	    	
 		try {
 	    	$rs = $this->_db->listaMinisterios();
@@ -67,5 +65,33 @@ class MinisteriosController extends Zend_Controller_Action
 		{
 			echo "exception";
 		}
+    }
+    
+    /**
+     * 
+     * Remove um ministério caso não tenha servos vinculados
+     */
+    public function removeAction()
+    {
+    	$this->_helper->viewRenderer->setNoRender(true);
+    	
+    	$ministerio_id = $this->getParam('f_ministerio_id');
+    	if(!empty($ministerio_id) && $ministerio_id != '') {
+    		$ministerio = array(
+    			'ministerio_id' => $ministerio_id
+    		);
+			$servos = $this->_db->servosMinisterio($ministerio_id);
+			
+			if(count($servos) <= 0){
+				$this->_db->removeMinisterio($ministerio_id);
+			}
+			else {
+				echo 'no';
+			}
+    	}
+    	else {
+    		//$this->_helper->redirector->gotoUrl('/dashboard');
+    		echo 'no';
+    	}
     }
 }

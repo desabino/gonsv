@@ -13,8 +13,10 @@
 				<?php foreach($this->ministerios as $key => $ministerio): ?>
 				<tr>
 					<td><?=$ministerio['ministerio_nome'];?></td>
-					<td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-remove"></span></button></td>
 					<td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+					<td><a href="/ministerios/remove/<?=$ministerio['ministerio_id'];?>" class="btn btn-primary btn-sm">
+						<span class="glyphicon glyphicon-remove"></span></a>
+					</td>
 				</tr>
 				<?php endforeach;?>
 			</tbody>
@@ -24,32 +26,13 @@
 	
 	<!-- OPÇÕES -->
 	<div class="col-xs-12 col-sm-12 col-md-3">
-		<div class="box">
-			<div class="box-header"><span class="glyphicon glyphicon-cog"></span> Opções</div>
-			<div class="box-content">
-				<input type="text" placeholder="pesquisar" name="pesquisar" class="form-control">
-				<br>
-				<button class="btn btn-primary btn-block" type="button">
-					<span class="glyphicon glyphicon-plus-sign"></span>
-					&nbsp;&nbsp;Novo Ministério
-				</button>
-			</div>
-		</div>
+		<!-- PESQUISAR -->
+		<?=$this->partial('/partial/pesquisar.phtml');?>
+		<!-- ENDS PESQUISAR -->
+	
+		<!-- NOVO -->
+		<?=$this->partial('/ministerios/novo.phtml', array('form' => $this->form));?>
+		<!-- ENDS NOVO -->
 	</div>
 	<!-- ENDS OPÇÕES -->
-	
-	<!-- NOVO MINISTÉRIO ->
-	<div class="col-xs-12 col-sm-12 col-md-3">
-		<h3>Novo ministério</h3>
-		<form action="<?=$this->form->getAction();?>" name="<?=$this->form->getName();?>" method="<?=$this->form->getMethod();?>" role="<?=$this->form->getAttrib('role');?>">
-			<div class="form-group">
-				<label class="sr-only" for="<?=$this->form->f_ministerio_nome->getAttrib('id');?>"><?=$this->form->f_ministerio_nome->getLabel();?></label>
-				<?=$this->form->f_ministerio_nome;?>
-			</div>
-			<div class="text-right">
-				<?=$this->form->submit;?>
-			</div>			
-		</form>
-	</div>
-	<!-- ENDS NOVO MINISTÉRIO -->
 </div>

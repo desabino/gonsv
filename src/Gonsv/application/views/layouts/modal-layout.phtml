@@ -1,0 +1,34 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?=$this->doctype();?>
+<html lang="pt-BR">
+    <head>
+    	<!-- META TAGS -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    	<!-- ENDS META TAGS -->
+    	
+        <?=$this->headTitle();?>
+		
+        <!-- STYLESHEET -->
+        <?=$this->partial('css.phtml', array('css' => $this->css)); ?>
+        <!-- ENDS STYLESHEET -->
+		
+        <!-- SCRIPT -->
+        <?=$this->partial('js.phtml', array('js' => $this->js)); ?>
+        <!-- ENDS SCRIPT -->
+    </head>
+    <body>
+        <div class="container-fluid" id="page">
+            <div class="row">
+                <div class="col-xs-12">
+					
+                    <!-- CONTEÚDO -->
+                    <?=$this->layout()->content; ?>
+                    <!-- CONTEÚDO -->
+					
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

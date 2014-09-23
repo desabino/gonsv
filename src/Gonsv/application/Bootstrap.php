@@ -72,7 +72,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     /**
      * Routes
      */
-    /*
     protected function _initRoutes()
     {
         // get router
@@ -82,7 +81,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/routes.ini', 'production');
         $router->addConfig($config, 'routes');
     }
-    */
 	
     /**
      * Navigation
@@ -123,7 +121,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->js = array ('/js/jquery/jquery.js',
         				   '/js/util/bootstrap.min.js',
         				   '/js/jquery/mask.min.js',
-        				   '/js/site/init.js'
+        				   '/js/site/site.js'
         				  );
     }
     

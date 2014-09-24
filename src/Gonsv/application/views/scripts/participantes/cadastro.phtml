@@ -1,0 +1,160 @@
+<form action="<?=$this->form->getAction();?>" name="<?=$this->form->getName();?>" method="<?=$this->form->getMethod();?>" role="<?=$this->form->getAttrib('role');?>">
+	<div class="row">
+		<div class="col-xs-12 col-md-12">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_nome->getAttrib('id');?>"><?=$this->form->f_nome->getLabel();?></label>
+				<?=$this->form->f_nome;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-12">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_endereco->getAttrib('id');?>"><?=$this->form->f_endereco->getLabel();?></label>
+				<?=$this->form->f_endereco;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_complemento->getAttrib('id');?>"><?=$this->form->f_complemento->getLabel();?></label>
+				<?=$this->form->f_complemento;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-4">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_bairro->getAttrib('id');?>"><?=$this->form->f_bairro->getLabel();?></label>
+				<?=$this->form->f_bairro;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-4">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_cidade->getAttrib('id');?>"><?=$this->form->f_cidade->getLabel();?></label>
+				<?=$this->form->f_cidade;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-1">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_uf->getAttrib('id');?>"><?=$this->form->f_uf->getLabel();?></label>
+				<?=$this->form->f_uf;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_telefone->getAttrib('id');?>"><?=$this->form->f_telefone->getLabel();?></label>
+				<?=$this->form->f_telefone;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_telefone2->getAttrib('id');?>"><?=$this->form->f_telefone2->getLabel();?></label>
+				<?=$this->form->f_telefone2;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_celular->getAttrib('id');?>"><?=$this->form->f_celular->getLabel();?></label>
+				<?=$this->form->f_celular;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_celular2->getAttrib('id');?>"><?=$this->form->f_celular2->getLabel();?></label>
+				<?=$this->form->f_celular2;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-12">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_email->getAttrib('id');?>"><?=$this->form->f_email->getLabel();?></label>
+				<?=$this->form->f_email;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-4">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_data_nasc->getAttrib('id');?>"><?=$this->form->f_data_nasc->getLabel();?></label>
+				<?=$this->form->f_data_nasc;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-8">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_paroquia->getAttrib('id');?>"><?=$this->form->f_paroquia->getLabel();?></label>
+				<?=$this->form->f_paroquia;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-2 checkbox">
+			<label>
+				<?=$this->form->f_batizado;?> <?=$this->form->f_batizado->getLabel();?>
+			</label>
+		</div>
+		
+		<div class="col-xs-12 col-md-8">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_batizado_em_qual_igreja->getAttrib('id');?>"><?=$this->form->f_batizado_em_qual_igreja->getLabel();?></label>
+				<?=$this->form->f_batizado_em_qual_igreja;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-2 checkbox">
+			<label>
+				<?=$this->form->f_crisma;?> <?=$this->form->f_crisma->getLabel();?>
+			</label>
+		</div>
+		
+		<div class="col-xs-12 col-md-4">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_estado_civil->getAttrib('id');?>"><?=$this->form->f_estado_civil->getLabel();?></label>
+				<?=$this->form->f_estado_civil;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-8">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_casado_em_qual_igreja->getAttrib('id');?>"><?=$this->form->f_casado_em_qual_igreja->getLabel();?></label>
+				<?=$this->form->f_casado_em_qual_igreja;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-2 checkbox">
+			<label>
+				<?=$this->form->f_participou_go_rcc;?> <?=$this->form->f_participou_go_rcc->getLabel();?>
+			</label>
+		</div>
+		
+		<div class="col-xs-12 col-md-6">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_quanto_tempo->getAttrib('id');?>"><?=$this->form->f_quanto_tempo->getLabel();?></label>
+				<?=$this->form->f_quanto_tempo;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-3 col-md-offset-1">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_data_cadastro->getAttrib('id');?>"><?=$this->form->f_data_cadastro->getLabel();?></label>
+				<?=$this->form->f_data_cadastro;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-12">
+			<div class="form-group">
+				<label class="sr-only" for="<?=$this->form->f_observacao->getAttrib('id');?>"><?=$this->form->f_observacao->getLabel();?></label>
+				<?=$this->form->f_observacao;?>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-md-12">
+			<div class="text-right">
+				<?=$this->form->submit;?>
+			</div>
+		</div>
+	</div>
+</form>

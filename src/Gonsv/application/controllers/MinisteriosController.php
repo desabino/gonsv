@@ -1,8 +1,8 @@
 <?php
-
 // Ministérios Controller
- 
+
 class MinisteriosController extends Zend_Controller_Action
+//class MinisteriosController extends PublicPageController
 {
 	public function init()
     {
@@ -36,9 +36,13 @@ class MinisteriosController extends Zend_Controller_Action
 					$ministerio_id = $this->_db->insert($ministerio);
 					
 					$form->reset();
+					
+					$type    = 'success';
+					$message = '<p>Ministério incluído com sucesso.</p>';
 				}
 				catch(Exception $ex){
-					echo 'exception: ' . $ex;
+					$type    = 'danger';
+					$message = $ex->getMessage();
 				}
 			}
 			else{
@@ -49,11 +53,8 @@ class MinisteriosController extends Zend_Controller_Action
 						$message .= '<p>' . $msg . '</p>';
 					}
 				}
-				$alert = array(
-					'type'    => 'danger',
-					'message' => $message . '<p>Por favor, verifique os dados digitados.</p>'
-				);
-				$this->view->alert = $alert;
+				$type    = 'danger';
+				$message = $message . '<p>Por favor, verifique os dados digitados.</p>';
 			}
 		}		
 	    	
@@ -63,7 +64,13 @@ class MinisteriosController extends Zend_Controller_Action
 		}
 		catch (Exception $ex)
 		{
-			echo "exception";
+			$type    = 'danger';
+			$message = $ex->getMessage();
+		}
+		
+		if(isset($type) && $type != ''){
+			$alert = Util_Helper::Alert($type, $message);
+			$this->view->alert = $alert;
 		}
     }
     
@@ -84,14 +91,21 @@ class MinisteriosController extends Zend_Controller_Action
 			
 			if(count($servos) <= 0){
 				$this->_db->removeMinisterio($ministerio_id);
+				$type = 'success';
+				$message = '<p>Ministério excluído com sucesso.</p>';
 			}
 			else {
-				echo 'no';
+				$type = 'warning';
+				$message = '<p>Não é possível remover um ministério com servos.<p>';
 			}
     	}
     	else {
-    		//$this->_helper->redirector->gotoUrl('/dashboard');
-    		echo 'no';
+			$type = 'danger';
+			$message = '<p>É necessário escolher um ministério para ser excluído.</p>';
     	}
+    	$alert = Util_Helper::Alert($type, $message);
+    	$this->view->alert = $alert;
+    	
+    	$this->_helper->redirector->gotoUrl('/ministerios');
     }
 }

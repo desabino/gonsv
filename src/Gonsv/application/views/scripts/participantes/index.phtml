@@ -1,13 +1,15 @@
 <div class="row">
-	<div class="col-xs-12">
-		<table class="table table-striped">
+	<div class="col-xs-12 col-sm-12 col-md-9">
+		<table class="table table-striped table-condensed">
 			<thead>
         		<tr>
         			<th>Nome</th>
-        			<th>Data de Nascimento</th>
+        			<th>Nascimento</th>
         			<th>Telefone</th>
         			<th>Celular</th>
         			<th>E-mail</th>
+        			<th>&nbsp;</th>
+        			<th>&nbsp;</th>
         		</tr>
         	</thead>
         	<tbody>
@@ -18,9 +20,21 @@
         			<td><?=$pessoa['telefone'];?></td>
         			<td><?=$pessoa['celular'];?></td>
         			<td><?=$pessoa['email'];?></td>
+        			<td><a href="#">detalhes</a></td>
+        			<td><a href="#">editar</a></td>
         		</tr>
         		<?php endforeach; ?>
         	</tbody>
         </table>
-	</div>  
+	</div>
+	
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<!-- PESQUISAR -->
+		<?=$this->partial('/partial/pesquisar.phtml');?>
+		<!-- ENDS PESQUISAR -->
+	
+		<!-- OPÇÕES -->
+		<?=$this->partial('/participantes/opcoes.phtml');?>
+		<!-- ENDS OPÇÕES -->
+	</div>
 </div>

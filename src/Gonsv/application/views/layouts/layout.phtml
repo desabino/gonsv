@@ -34,7 +34,7 @@
 	
 	                    <!-- ALERT MESSAGE -->
 	                    <?php if($this->alert != '' || is_array($this->alert)): ?>
-	                    <div class="alert alert-<?=$this->alert['type'];?>"><?=$this->alert['message'];?></div>
+	                    <div class="alert alert-<?=$this->alert->type;?>"><?=$this->alert->message;?></div>
 	                    <?php endif; ?>
 	                    <!-- ENDS ALERT MESSAGE -->
 						

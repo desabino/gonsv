@@ -6,14 +6,13 @@
 				<tr>
 					<th>Ministério</th>
 					<th>&nbsp;</th>
-					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach($this->ministerios as $key => $ministerio): ?>
 				<tr>
 					<td><?=$ministerio['ministerio_nome'];?></td>
-					<td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+					<!-- <td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td> -->
 					<td><a href="/ministerios/remove/<?=$ministerio['ministerio_id'];?>" class="btn btn-primary btn-sm">
 						<span class="glyphicon glyphicon-remove"></span></a>
 					</td>

@@ -20,6 +20,7 @@ class ParticipantesController extends Zend_Controller_Action
     
     public function cadastroAction()
     {
-    	
+    	$form = new Form_Pessoa();
+		$this->view->form = $form;
     }
 }

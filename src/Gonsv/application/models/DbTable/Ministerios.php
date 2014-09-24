@@ -21,6 +21,12 @@ class Model_DbTable_Ministerios extends Zend_Db_Table_Abstract
 		return $this->fetchAll($select);
 	}
 	
+	/**
+	 * 
+	 * Pesquisa servos em um ministério específico
+	 * @param int $ministerio_id
+	 * @return array
+	 */
 	public function servosMinisterio($ministerio_id)
 	{
 		$select = $this->select()
@@ -32,6 +38,11 @@ class Model_DbTable_Ministerios extends Zend_Db_Table_Abstract
 		return $this->fetchAll($select);
 	}
 	
+	/**
+	 * 
+	 * Remove um ministério específico
+	 * @param int $ministerio_id
+	 */
 	public function removeMinisterio($ministerio_id)
 	{
 		$where = $this->getAdapter()->quoteInto('ministerio_id = ?', $ministerio_id);

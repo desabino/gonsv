@@ -17,4 +17,21 @@ class Util_Helper extends Zend_Controller_Action_Helper_Abstract
 		
 		return $file;
 	}
+	
+	/**
+	 * Criar uma mensagem de alerta e armazena no objeto FlashMessenger
+	 * 
+	 * @param string $type    => tipo de mensagem a ser exibida (primary/success/info/warning/danger)
+	 * @param string $message => mensagem a ser exibida
+	 */
+	static public function Alert($type, $message)
+	{
+		$alert = array(
+			'type'    => $type,
+			'message' => $message
+		);
+		$alert = Util_Format_Array::toObject($alert);
+		return $alert;
+		//$this->_helper->FlashMessenger($alert);
+	}
 }

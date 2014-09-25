@@ -1,22 +1,22 @@
 <?php
 
-// Ministérios
+// Estado Civil
 
-class Model_DbTable_Ministerios extends Zend_Db_Table_Abstract
+class Model_DbTable_EstadoCivil extends Zend_Db_Table_Abstract
 {
-	protected $_name = 'ministerios';
+	protected $_name = 'estado_civil';
 	
 	/**
 	 * 
-	 * Lista todos os ministérios em ordem alfabética.
+	 * Lista todos os estados civis em ordem alfabética.
 	 * 
 	 * @return array
 	 */
-	public function listaMinisterios()
+	public function listaEstadosCivis()
 	{
 		$select = $this->select()
-					   ->from(array('m' => 'ministerios'))
-					   ->order('m.ministerio_nome');
+					   ->from(array('ec' => 'estado_civil'))
+					   ->order('ec.estado_civil_nome');
 		return $this->fetchAll($select);
 	}
 }

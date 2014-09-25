@@ -159,6 +159,14 @@ class Util_Format_Date extends Util_Format_Abstract
 		return $abr ? substr($textomes,0,3) : $textomes;
 	}
 	
+	/**
+	 * Função que retorna uma data vinda do banco para a tela
+	 * 
+	 * @param date $date
+	 * @param string $type (datetime/date/time)
+	 * 
+	 * @return date
+	 */
 	static public function DbToScreen($date, $type = 'datetime')
 	{
 		try{
@@ -181,6 +189,41 @@ class Util_Format_Date extends Util_Format_Abstract
 			return $date;
 		}
 		catch(Exception $e)
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * Função que retorna uma data vinda da tela para o banco
+	 * 
+	 * @param date $date
+	 * @param string $type (datetime/date/time)
+	 * 
+	 * @return date
+	 */
+	static public function ScreenToDb($date, $type = 'datetime')
+	{
+		try {
+			$registry = Zend_Registry::getInstance();
+			$locale = $registry->get('Zend_Locale');
+			$date = Zend_Locale_Format::getDate($date, array('date_format' => 'dd-MM-yyyy HH:mm:ss', 'locale' => $locale));
+			
+			switch ($type) {
+				case 'datetime':
+					$date =  $date['year'] . '-' . $date['month'] . '-' . $date['day'] . ' ' . $date['hour'] . ':' . $date['minute'] . ':' . $date['second'];
+					break;
+				case 'date':
+					$date =  $date['year'] . '-' . $date['month'] . '-' . $date['day'];
+					break;
+				case 'time':
+					$date =  $date['hour'] . ':' . $date['minute'] . ':' . $date['second'];
+					break;
+			}
+			
+			return $date;
+		}
+		catch(Exceptin $e)
 		{
 			return false;
 		}

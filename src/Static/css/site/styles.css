@@ -64,6 +64,9 @@ header {
 	        font-weight: 600;
 	        text-transform: uppercase;
 	    }
+	       .page-header h1 small /*pagesubheader*/ {
+	           color: rgba(200, 200, 200, 1);
+	       }
 
 /* ------------------------------
     CONTENT

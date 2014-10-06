@@ -4,16 +4,16 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Ministério</th>
+					<th>Servos</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($this->ministerios as $key => $ministerio): ?>
+				<?php foreach($this->servos as $key => $servo): ?>
 				<tr>
-					<td><?=$ministerio['ministerio_nome'];?></td>
+					<td><?=$servo['nome'];?></td>
 					<!-- <td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td> -->
-					<td><a href="/ministerios/remove/<?=$ministerio['ministerio_id'];?>" class="btn btn-primary btn-sm">
+					<td><a href="/servos/remove/<?=$servo['servo_id'];?>" class="btn btn-primary btn-sm">
 						<span class="glyphicon glyphicon-remove"></span></a>
 					</td>
 				</tr>

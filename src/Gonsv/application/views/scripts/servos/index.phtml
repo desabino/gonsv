@@ -4,7 +4,9 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Servos</th>
+					<th>Servo</th>
+					<th>Data de Nascimento</th>
+					<th>Ativo</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -12,6 +14,8 @@
 				<?php foreach($this->servos as $key => $servo): ?>
 				<tr>
 					<td><?=$servo['nome'];?></td>
+					<td><?=$servo['data_nasc'];?></td>
+					<td><?=$servo['servo_ativo'];?></td>
 					<!-- <td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td> -->
 					<td><a href="/servos/remove/<?=$servo['servo_id'];?>" class="btn btn-primary btn-sm">
 						<span class="glyphicon glyphicon-remove"></span></a>
@@ -30,7 +34,7 @@
 		<!-- ENDS PESQUISAR -->
 	
 		<!-- NOVO -->
-		<?=$this->partial('/ministerios/novo.phtml', array('form' => $this->form));?>
+		
 		<!-- ENDS NOVO -->
 	</div>
 	<!-- ENDS OPÇÕES -->

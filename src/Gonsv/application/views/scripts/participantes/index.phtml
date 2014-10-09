@@ -14,14 +14,18 @@
         	</thead>
         	<tbody>
         		<?php foreach($this->pessoas as $pessoa): ?>
-        		<tr>
+        		<tr class="<?=($pessoa['ativo'] == 1) ? 'info' : '';?>">
         			<td><?=$pessoa['nome'];?></td>
         			<td><?=Util_Format_Date::DbToScreen($pessoa['data_nasc'], 'date');?></td>
-        			<td><?=$pessoa['telefone'];?></td>
-        			<td><?=$pessoa['celular'];?></td>
+        			<td><?=Util_Format_Number::toSimplePhone($pessoa['telefone']);?></td>
+        			<td><?=Util_Format_Number::toSimplePhone($pessoa['celular']);?></td>
         			<td><?=$pessoa['email'];?></td>
-        			<td><a href="#">detalhes</a></td>
-        			<td><a href="/participantes/cadastro/<?=$pessoa['pessoa_id'];?>">editar</a></td>
+        			<td><a href="/participantes/detalhes/<?=$pessoa['pessoa_id'];?>" class="btn btn-primary btn-sm fancybox" data-fancybox-type="iframe">
+        				<span class="glyphicon glyphicon-list-alt"></span></a>
+        			</td>
+        			<td><a href="/participantes/cadastro/<?=$pessoa['pessoa_id'];?>" class="btn btn-primary btn-sm">
+        				<span class="glyphicon glyphicon-pencil"></span></a>
+        			</td>
         		</tr>
         		<?php endforeach; ?>
         	</tbody>

@@ -25,6 +25,7 @@ class ServosController extends Zend_Controller_Action
 		    		$servos[$servo['servo_id']] = array(
 		    			'pessoa_id'   => $servo['pessoa_id'],
 		    			'nome'        => $servo['nome'],
+		    			'data_nasc'   => $servo['data_nasc'],
 		    			'servo_id'    => $servo['servo_id'],
 		    			'servo_ativo' => $servo['servo_ativo'],
 		    			'ministerios' => array()
@@ -37,8 +38,7 @@ class ServosController extends Zend_Controller_Action
 	    		);
 	    		$servos[$servo['servo_id']]['ministerios'][$servo['ministerio_id']] = $ministerio;
 	    	}
-	    	
-	    	$this->view->servos = $rs;
+	    	$this->view->servos = $servos;
 		}
 		catch (Exception $ex)
 		{

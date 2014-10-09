@@ -115,4 +115,11 @@ class ParticipantesController extends Zend_Controller_Action
 		
 		$form->f_estado_civil->setMultiOptions($estadoCivilField);
     }
+    
+    public function detalhesAction()
+    {    	
+    	$this->_helper->_layout->setLayout('modal-layout');
+    	$pessoa = $this->_db->consultaPessoaPorId($this->getParam('f_pessoa_id'));
+    	$this->view->pessoa = $pessoa;
+    }
 }

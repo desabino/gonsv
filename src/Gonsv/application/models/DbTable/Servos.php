@@ -25,20 +25,21 @@ class Model_DbTable_Servos extends Zend_Db_Table_Abstract
 		//  INNER JOIN sabino_dev_gonsv.pessoas AS p ON p.pessoa_id = s.pessoa_id
 		//  INNER JOIN sabino_dev_gonsv.servo_ministerio AS sm ON sm.servo_id = s.servo_id
 		//  INNER JOIN sabino_dev_gonsv.ministerios AS m ON m.ministerio_id = sm.ministerio_id;
+		//  ORDER BY p.nome ASC AND m.ministerio_nome ASC
 		$select = $this->select()
                        ->setIntegrityCheck(false)
 					   ->from(array('s' => 'servos'),
-					          array('servo_id', 'servo_ativo' => 's.ativo'))
+					          array('servo_id', 'servo_ativo' => 'ativo'))
 					   ->joinInner(array('p' => 'pessoas'),
                        	   'p.pessoa_id = s.pessoa_id',
 					       array('p.pessoa_id', 'p.nome', 'p.data_nasc'))
 					   ->joinInner(array('sm' => 'servo_ministerio'),
                        	   'sm.servo_id = s.servo_id',
-					       array('servo_ministerio_ativo' => 'sm.ativo'))
+					       array('servo_ministerio_ativo' => 'ativo'))
 					   ->joinInner(array('m' => 'ministerios'),
                        	   'm.ministerio_id = sm.ministerio_id',
 					       array('m.ministerio_id', 'm.ministerio_nome'))
-					   ->order('p.nome');
+					   ->order(array('p.nome', 'm.ministerio_nome'));
 		return $this->fetchAll($select);
 	}
 }

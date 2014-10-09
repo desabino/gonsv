@@ -9,6 +9,7 @@ var Site =
 		if($('.f-filter').length > 0){
 		    this.filter();
 		}
+		Site.fancybox();
 	},
     
     filter: function()
@@ -17,6 +18,15 @@ var Site =
         $(filter).livefilter({
             selector: '.table tbody tr'
         });
+    },
+    
+    fancybox: function()
+    {
+    	$('.fancybox').fancybox({
+        	openEffect	: 'elastic',
+        	closeEffect	: 'elastic',
+    		scrolling   : 'auto'
+    	});
     }
 }
 

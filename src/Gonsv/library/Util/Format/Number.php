@@ -150,4 +150,62 @@ class Util_Format_Number extends Util_Format_Abstract
 		
 		return $newnumber;
 	}
+	
+	/**
+	 * Formata um telefone somente número com máscara (xx) x-xxxx-xxxx
+	 * 
+	 * @param  string $number
+	 * @return string $newn
+	 */
+	static public function toPhone($number)
+	{
+		$type = null;
+		$newn = '';
+		if(strlen($number) == 11) {
+			$type = 'cell';
+		}
+		else if(strlen($number) == 10) {
+			$type = 'phone';
+		}
+		
+		switch ($type){
+			case 'cell':
+				$ddd   = substr($number, 0, 2);
+				$ncell = substr($number, 2, 1);
+				$pre   = substr($number, 3, 4);
+				$pos   = substr($number, 7, 4);
+				$newn  = '(' . $ddd . ') ' . $ncell . '-' . $pre . '-' . $pos;
+				break;
+			case 'phone':
+				$ddd   = substr($number, 0, 2);
+				$pre   = substr($number, 3, 4);
+				$pos   = substr($number, 7, 4);
+				$newn  = '(' . $ddd . ') ' . $pre . '-' . $pos;
+				break;
+			default:
+				$newn  = $number;
+		}
+		return $newn;
+	}
+	
+	/**
+	 * Formata um telefone somente número com máscara xx.xxxxxxxxx
+	 * 
+	 * @param  string $number
+	 * @return string $new_number
+	 */
+	static public function toSimplePhone($number)
+	{
+		$size = strlen($number);
+		if($size >= 10) {
+			$ddd        = substr($number, 0, 2);
+			$number     = substr($number, 2);
+			$new_number = $ddd . '.' . $number;
+		}
+		else {
+			$new_number = $number;
+		}
+		
+		return $new_number;
+	}
 }

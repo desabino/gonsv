@@ -113,6 +113,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // Definindo css default
         $view->css = array('/css/util/bootstrap.min.css',
         				   //'/css/util/bootstrap-theme.min.css',
+        				   //'/css/util/bootstrap-lightbox.min.css',
+        				   //'/css/jquery/lightbox/lightbox.css',
+        				   '/css/jquery/fancybox/fancybox.css',
                            '/css/util/font-gothic.css',
         				   '/css/site/styles.css'
         				  );
@@ -120,6 +123,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // Definindo js default
         $view->js = array ('/js/jquery/jquery.js',
         				   '/js/util/bootstrap.min.js',
+        				   //'/js/util/bootstrap-lightbox.min.js',
+        				   //'/js/jquery/lightbox/lightbox.min.js',
+        				   '/js/jquery/fancybox/fancybox.js',        				   
         				   '/js/jquery/mask.min.js',
         				   '/js/jquery/livefilter.min.js',
         				   '/js/site/site.js'

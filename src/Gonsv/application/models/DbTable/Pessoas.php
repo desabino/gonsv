@@ -16,7 +16,11 @@ class Model_DbTable_Pessoas extends Zend_Db_Table_Abstract
 	public function listaPessoas()
 	{
 		$select = $this->select()
+                       ->setIntegrityCheck(false)
 					   ->from(array('p' => 'pessoas'))
+		               ->joinLeft(array('s' => 'servos'),
+                       	   'p.pessoa_id = s.pessoa_id',
+		                   'ativo')
 					   ->order('p.nome');
 		return $this->fetchAll($select);
 	}

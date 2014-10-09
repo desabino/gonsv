@@ -7,18 +7,26 @@
 					<th>Servo</th>
 					<th>Data de Nascimento</th>
 					<th>Ativo</th>
+					<th>Ministérios</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php foreach($this->servos as $key => $servo): ?>
-				<tr>
+				<tr class="<?=($servo['servo_ativo'] == 1) ? 'text-primary' : 'text-muted';?>">
 					<td><?=$servo['nome'];?></td>
-					<td><?=$servo['data_nasc'];?></td>
-					<td><?=$servo['servo_ativo'];?></td>
-					<!-- <td><button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td> -->
-					<td><a href="/servos/remove/<?=$servo['servo_id'];?>" class="btn btn-primary btn-sm">
-						<span class="glyphicon glyphicon-remove"></span></a>
+					<td><?=Util_Format_Date::DbToScreen($servo['data_nasc'], 'date');?></td>
+					<td><?=($servo['servo_ativo'] == 1)? 'sim' : 'não';?></td>
+					<td class="small">
+						<?php foreach ($servo['ministerios'] as $key => $ministerio): ?>
+							<?php if($ministerio['servo_ministerio_ativo'] == 1): ?>
+								<?=$ministerio['ministerio_nome'];?>
+								<?=($ministerio === end($servo['ministerios'])) ? '' : ', '?>
+							<?php endif; ?> 
+						<?php endforeach;?>
+					</td>
+					<td><a href="/servos/edita/<?=$servo['servo_id'];?>" class="btn btn-primary btn-sm">
+						<span class="glyphicon glyphicon-pencil"></span></a>
 					</td>
 				</tr>
 				<?php endforeach;?>

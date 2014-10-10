@@ -23,9 +23,11 @@ var Site =
     fancybox: function()
     {
     	$('.fancybox').fancybox({
-        	openEffect	: 'elastic',
         	closeEffect	: 'elastic',
-    		scrolling   : 'auto'
+        	maxHeight   : '70%',
+        	openEffect	: 'elastic',
+    		scrolling   : 'auto',
+    		width       : '80%'
     	});
     }
 }

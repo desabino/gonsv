@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+/* --------------------------------------------
+	DETALHES TÍTULO
+-------------------------------------------- */
+.detalhes-titulo {
+	background-color: rgba(200, 200, 200, 1);
+	margin-bottom: 12px;
+	padding: 24px 12px;
+	position: relative;
+}
+    .detalhes-titulo .icone {
+        font-size: 3em;
+        float: left;
+        padding: 4px 12px 0px;
+    }
+    .detalhes-titulo .nome {
+        font-size: 2em;
+    }
+    .detalhes-titulo .servo {
+        color: rgba(100, 100, 100, 1);
+        font-size: 1.2em;
+        font-weight: bolder;
+    }
+    .detalhes-titulo .data-cadastro {
+        color: rgba(100, 100, 100, 1);
+        font-size: 0.8em;
+        float: right;
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+    }
+    
+/* --------------------------------------------
+    DETALHES ÚLTIMO
+-------------------------------------------- */
+.detalhes-ultimo {
+	margin-top: 12px;
+}

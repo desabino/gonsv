@@ -178,8 +178,8 @@ class Util_Format_Number extends Util_Format_Abstract
 				break;
 			case 'phone':
 				$ddd   = substr($number, 0, 2);
-				$pre   = substr($number, 3, 4);
-				$pos   = substr($number, 7, 4);
+				$pre   = substr($number, 2, 4);
+				$pos   = substr($number, 6, 4);
 				$newn  = '(' . $ddd . ') ' . $pre . '-' . $pos;
 				break;
 			default:

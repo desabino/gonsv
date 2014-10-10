@@ -1,3 +1,130 @@
-<pre>
-<?php print_r($this->pessoa); ?>
-</pre>
+<div class="row">
+	<div class="col-xs-12 detalhes-titulo">
+		<div class="icone">
+			<span class="glyphicon glyphicon-user"></span>
+		</div>
+		
+		<div class="nome">
+			<?=$this->pessoa['nome'];?>
+		</div>
+		
+		<div class="servo">
+			<?=(isset($this->pessoa['ativo']) && $this->pessoa['ativo'] == 1) ? 'Servo(a)' : 'Participante'; ?>
+		</div>
+		
+		<?php if(!empty($this->pessoa['data_cadastro'])):?>
+			<div class="data-cadastro">
+				Data de cadastro: <?=Util_Format_Date::DbToScreen($this->pessoa['data_cadastro'], 'date');?>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-4">
+		<div class="box">
+			<div class="box-header">Endereço</div>
+			<div class="box-content">
+				<?=$this->pessoa['endereco']?>
+				<?=(!empty($this->pessoa['numero'])) ? ', ' . $this->pessoa['numero'] : ''?>
+				<?=(!empty($this->pessoa['complemento'])) ? ' - ' . $this->pessoa['complemento'] : ''?>
+				<br>
+				<?=$this->pessoa['bairro']?>
+				<?=$this->pessoa['cidade']?> <?=$this->pessoa['uf']?>
+				<br>
+				CEP: <?=$this->pessoa['cep']?>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="box">
+			<div class="box-header">Contato</div>
+			<div class="box-content">
+				<?=(!empty($this->pessoa['telefone'])) ? 'Telefone: ' . Util_Format_Number::toPhone($this->pessoa['telefone']) . '<br>' : ''; ?>
+				<?=(!empty($this->pessoa['telefone2'])) ? 'Telefone 2: ' . Util_Format_Number::toPhone($this->pessoa['telefone2']) . '<br>' : ''; ?>
+				<?=(!empty($this->pessoa['celular'])) ? 'Celular: ' . Util_Format_Number::toPhone($this->pessoa['celular']) . '<br>' : ''; ?>
+				<?=(!empty($this->pessoa['celular2'])) ? 'Celular 2: ' . Util_Format_Number::toPhone($this->pessoa['celular2']) . '<br>' : ''; ?>
+				<?=(!empty($this->pessoa['email'])) ? 'E-mail: ' . $this->pessoa['email'] : ''; ?>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-4">
+		<div class="box">
+			<div class="box-header">Outros dados</div>
+			<div class="box-content">
+				Paróquia: <?=$this->pessoa['paroquia']; ?>
+				<br>
+				É batizado: <?=($this->pessoa['batizado'] == 1) ? 'Sim ' : 'Não'; ?>
+				<?=($this->pessoa['batizado'] == 1) ? ' - na igreja ' . $this->pessoa['batizado_em_qual_igreja'] : ''; ?>
+				<br>
+				Fez catequese: <?=($this->pessoa['catequese'] == 1) ? 'Sim' : '';?>
+				|
+				Fez crisma: <?=($this->pessoa['crisma'] == 1) ? 'Sim' : '';?>
+				<br>
+				Estado Civil: <?=$this->pessoa['estado_civil_nome']; ?>
+				<br>
+				Casado em qual igreja: <?=$this->pessoa['casado_em_qual_igreja']?>
+				<br>
+				Participou de Grupo de Oração da RCC: <?=($this->pessoa['participou_go_rcc'] == 1) ? 'Sim' : 'Não';?><br> 
+				por quanto tempo: <?=$this->pessoa['quanto_tempo']?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row detalhes-ultimo">
+	<div class="col-xs-12 col-sm-6">
+		<div class="">
+			<form>
+			    <!-- SERVO OU NÃO -->
+				<label for="ativo" class="control-label input-group">Servo</label>
+			    <div class="btn-group" data-toggle="buttons">
+			        <label class="btn btn-primary active">
+			            <input type="radio" name="ativo" value="1" checked="">Ativo
+			        </label>
+			        <label class="btn btn-primary">
+			            <input type="radio" name="ativo" value="0">Não ativo
+			        </label>
+			        <label class="btn btn-primary">
+			            <input type="radio" name="ativo" value="">Não é servo
+			        </label>
+			    </div>
+			    <!-- ENDS SERVO OU NÃO -->
+			    <br><br>
+			    <!-- MINISTÉRIOS -->
+			    <div class="row">
+			    	<div class="col-xs-5">
+			    	
+					    <label for="ministerios" class="control-label input-group">Ministérios</label>
+					    <select multiple class="form-control" name="ministerios" size="7">
+					    <?php foreach($this->ministerios as $key => $ministerio): ?>
+							<option value="<?=$ministerio['ministerio_id'];?>"><?=$ministerio['ministerio_nome'];?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<button class="btn btn-primary btn-block">&rsaquo;</button>
+						<button class="btn btn-primary btn-block">&raquo;</button>
+						<button class="btn btn-primary btn-block">&lsaquo;</button>
+						<button class="btn btn-primary btn-block">&laquo;</button>
+					</div>
+					<div class="col-xs-5">
+						<label for="ministerios-ativos" class="control-label input-group">Ministérios ativos</label>
+						<select multiple class="form-control" name="ministerios-ativos" size="7">
+						
+						</select>
+					</div>
+				</div>
+			    <!-- ENDS MINISTÉRIOS -->
+			</form>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<div class="box">
+			<div class="box-header">Observações</div>
+			<div class="box-content">
+				<?=$this->pessoa['observacao']?>
+			</div>
+		</div>
+	</div>
+</div>

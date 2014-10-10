@@ -9,6 +9,7 @@ class ParticipantesController extends Zend_Controller_Action
         $this->view->pageheader = "Participantes";
         $this->_db   = new Model_DbTable_Pessoas();
         $this->_dbes = new Model_DbTable_EstadoCivil();
+        $this->_dbm  = new Model_DbTable_Ministerios();
         
         //$this->usuario = Zend_Auth::getInstance()->getIdentity();
     }
@@ -118,8 +119,13 @@ class ParticipantesController extends Zend_Controller_Action
     
     public function detalhesAction()
     {    	
-    	$this->_helper->_layout->setLayout('modal-layout');
+    	// CSS
+    	array_push($this->view->css, '/css/site/participante-detalhe.css');
+    	
+    	$ministerios = $this->_dbm->listaMinisterios();
     	$pessoa = $this->_db->consultaPessoaPorId($this->getParam('f_pessoa_id'));
-    	$this->view->pessoa = $pessoa;
+    	
+    	$this->view->ministerios = $ministerios;
+    	$this->view->pessoa = $pessoa[0];
     }
 }

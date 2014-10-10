@@ -35,7 +35,14 @@ class Model_DbTable_Pessoas extends Zend_Db_Table_Abstract
 	public function consultaPessoaPorId($pessoa_id)
 	{
 		$select = $this->select()
+                       ->setIntegrityCheck(false)
 		               ->from(array('p' => 'pessoas'))
+		               ->joinLeft(array('ec' => 'estado_civil'),
+                       	   'p.estado_civil = ec.estado_civil_id',
+		                   'estado_civil_nome')
+		               ->joinLeft(array('s' => 'servos'),
+                       	   'p.pessoa_id = s.pessoa_id',
+		                   'ativo')
 		               ->where('p.pessoa_id = ?', $pessoa_id);
 		return $this->fetchAll($select);
 	}

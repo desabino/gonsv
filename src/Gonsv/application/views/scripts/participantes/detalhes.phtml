@@ -17,6 +17,12 @@
 				Data de cadastro: <?=Util_Format_Date::DbToScreen($this->pessoa['data_cadastro'], 'date');?>
 			</div>
 		<?php endif; ?>
+		
+		<?php if(!empty($this->pessoa['data_nasc'])):?>
+			<div class="data-nasc">
+				Data de aniversário: <?=Util_Format_Date::DbToScreen($this->pessoa['data_nasc'], 'birthday');?>
+			</div>
+		<?php endif; ?>
 	</div>
 </div>
 
@@ -73,6 +79,7 @@
 </div>
 
 <div class="row detalhes-ultimo">
+	<?php /*
 	<div class="col-xs-12 col-sm-6">
 		<div class="">
 			<form>
@@ -119,6 +126,8 @@
 			</form>
 		</div>
 	</div>
+	*/ ?>
+	
 	<div class="col-xs-12 col-sm-6">
 		<div class="box">
 			<div class="box-header">Observações</div>
@@ -126,5 +135,9 @@
 				<?=$this->pessoa['observacao']?>
 			</div>
 		</div>
+	</div>
+	
+	<div class="col-xs-12 col-md-3 col-sm-offset-3">
+		<a href="/participantes" class="btn btn-warning btn-block">Voltar</a>
 	</div>
 </div>

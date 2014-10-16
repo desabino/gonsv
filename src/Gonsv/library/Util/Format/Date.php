@@ -184,6 +184,8 @@ class Util_Format_Date extends Util_Format_Abstract
 				case 'time':
 					$date =  $date['hour'] . ':' . $date['minute'] . ':' . $date['second'];
 					break;
+				case 'birthday':
+					$date = $date['day'] . ' de ' . Util_Format_Date::MonthName($date['month']);
 			}
 			
 			return $date;

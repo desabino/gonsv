@@ -22,7 +22,8 @@
         font-size: 1.2em;
         font-weight: bolder;
     }
-    .detalhes-titulo .data-cadastro {
+    .detalhes-titulo .data-cadastro,
+    .detalhes-titulo .data-nasc {
         color: rgba(100, 100, 100, 1);
         font-size: 0.8em;
         float: right;
@@ -31,6 +32,9 @@
         right: 24px;
     }
     
+    .detalhes-titulo .data-nasc {
+        bottom: 42px;    
+    }
 /* --------------------------------------------
     DETALHES ÚLTIMO
 -------------------------------------------- */

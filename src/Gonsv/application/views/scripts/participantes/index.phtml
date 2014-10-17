@@ -4,10 +4,10 @@
 			<thead>
         		<tr>
         			<th>Nome</th>
-        			<th>Nascimento</th>
         			<th>Telefone</th>
         			<th>Celular</th>
         			<th>E-mail</th>
+        			<th>Newsletter</th>
         			<th>&nbsp;</th>
         			<th>&nbsp;</th>
         		</tr>
@@ -16,10 +16,16 @@
         		<?php foreach($this->pessoas as $pessoa): ?>
         		<tr class="<?=($pessoa['ativo'] == 1) ? 'info' : '';?>">
         			<td><?=$pessoa['nome'];?></td>
-        			<td><?=Util_Format_Date::DbToScreen($pessoa['data_nasc'], 'date');?></td>
         			<td><?=Util_Format_Number::toSimplePhone($pessoa['telefone']);?></td>
         			<td><?=Util_Format_Number::toSimplePhone($pessoa['celular']);?></td>
         			<td><?=$pessoa['email'];?></td>
+        			<td>
+        				<?php if($pessoa['email'] != ''): ?>
+        					<?=($pessoa['newsletter'] == 1) ? '<span class="text-info"><strong>Sim</strong></span>' : '<span class="text-danger"><strong>Não</strong></span>'?>
+        				<?php else: ?>
+        					<span class="text-default">Sem e-mail</span>
+        				<?php endif;?>
+        			</td>
         			<td><a href="/participantes/detalhes/<?=$pessoa['pessoa_id'];?>" class="btn btn-primary btn-sm">
         				<span class="glyphicon glyphicon-list-alt"></span></a>
         			</td>

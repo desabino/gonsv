@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-9">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nome</th>
+        			<th>E-mail</th>
+        			<th>Newsletter</th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php foreach($this->relatorio as $pessoa): ?>
+        		<tr class="">
+        			<td><?=$pessoa['nome'];?></td>
+        			<td><?=$pessoa['email'];?></td>
+        			<td>
+        				<?php if($pessoa['email'] != ''): ?>
+        					<?=($pessoa['newsletter'] == 1) ? '<span class="text-info"><strong>Sim</strong></span>' : '<span class="text-danger"><strong>Não</strong></span>'?>
+        				<?php else: ?>
+        					<span class="text-default">Sem e-mail</span>
+        				<?php endif;?>
+        			</td>
+        		</tr>
+        		<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="col-xs-12 col-sm-12 col-md-3">
+		<div class="box">
+			<div class="box-header"><span class="glyphicon glyphicon-cog"></span> Opções</div>
+			<div class="box-content">
+				<button type="button" href="/participantes/cadastro" class="btn btn-primary btn-block" id="btn-integracao">
+					<span class="glyphicon glyphicon-export"></span> Exportar csv
+				</button>
+				<a href="/participantes/cadastro" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-saved"></span> Confirmar integração</a>
+			</div>
+		</div>
+	</div>
+</div>

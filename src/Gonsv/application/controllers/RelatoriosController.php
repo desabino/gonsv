@@ -6,7 +6,7 @@ class RelatoriosController extends Zend_Controller_Action
 	public function init()
 	{
         $this->view->pageheader = "Relatórios";
-        $this->_db = new Model_DbTable_Relatorios();
+        $this->_db   = new Model_DbTable_Relatorios();
 	}
 	
 	/**
@@ -47,6 +47,7 @@ class RelatoriosController extends Zend_Controller_Action
         
         try {
     		$filepath = Util_Export_File::csv($name, $data);
+        	
     		$data = array(
     			'filepath' => $filepath
     		);
@@ -55,5 +56,17 @@ class RelatoriosController extends Zend_Controller_Action
     	catch (Exception $e) {
     		echo Zend_Json::encode($e->getMessage());
     	}    	
+    }
+    
+    private function integracaoliberada($pessoas)
+    {
+    	try {
+    		foreach($pessoas as $pessoa) {
+    			$ok = $this->_dbin->insert($pessoa);
+    		}
+    	}
+    	catch (Exception $e) {
+    		return $e->getMessage();
+    	}
     }
 }

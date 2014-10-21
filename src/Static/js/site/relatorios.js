@@ -3,11 +3,11 @@ var Relatorios =
 	init: function()
 	{
 		$('#btn-integracao').bind('click', function(){
-			Relatorios.exportarCsv('/relatorios/integracaocsv');
+			Relatorios.exportarCsv('/relatorios/integracaocsv', $(this));
 		});
 	},
 	
-	exportarCsv: function(path)
+	exportarCsv: function(path, btn)
 	{
 		$.ajax({
 			type: 'post',
@@ -17,7 +17,7 @@ var Relatorios =
 				
 			},
 			success: function(data) {
-				console.log(data);
+				$(btn).after('<a href="' + data.filepath + '" class="btn btn-info btn-block">baixar lista</a>');
 			}
 		});
 	}

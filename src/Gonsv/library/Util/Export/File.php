@@ -24,6 +24,8 @@ class Util_Export_File
     	}
     	
     	// Definindo dados
+    	$cols = substr($cols,0,-1);
+    	$rows = substr($rows,0,-1);
     	$dados = '';
     	$dados = $cols . $rows;
     	

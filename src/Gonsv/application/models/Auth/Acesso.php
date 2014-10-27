@@ -22,7 +22,7 @@ class Model_Auth_Acesso extends Zend_Db_Table_Abstract
         //Faz inner join dos dados do perfil no SELECT do Auth_Adapter
         $authAdapter->getDbSelect()
                     ->joinInner(array('ct' => 'conta_tipo'),
-                               'ct.id_conta_tipo = conta.tipo');
+                               'ct.conta_tipo_id = conta.tipo');
         
         //Efetua o login
         $auth = Zend_Auth::getInstance();
@@ -34,7 +34,7 @@ class Model_Auth_Acesso extends Zend_Db_Table_Abstract
             $info = $authAdapter->getResultRowObject(null, 'senha');
 			
             $usuario = new Model_Auth_User();
-            $usuario->setIdUser($info->id_conta);
+            $usuario->setIdUser($info->conta_id);
             $usuario->setFullName($info->nome);
             $usuario->setUserName($info->email);
             $usuario->setRoleId($info->texto_identificacao);

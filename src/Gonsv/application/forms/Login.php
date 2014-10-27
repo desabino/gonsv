@@ -17,7 +17,7 @@ class Form_Login extends Zend_Form
               ->setValue('')
               ->setLabel('Digite seu e-mail')
               ->setAttrib('id', 'f-email')
-              ->setAttrib('class', 'form-control input-lg')
+              ->setAttrib('class', 'form-control')
               ->setAttrib('placeholder', 'Digite seu e-mail');
               
         $senha = new Zend_Form_Element_Password('f_senha');
@@ -28,12 +28,12 @@ class Form_Login extends Zend_Form
               ->setValue('')
               ->setLabel('Digite sua senha')
               ->setAttrib('id', 'f-senha')
-              ->setAttrib('class', 'form-control input-lg')
+              ->setAttrib('class', 'form-control')
               ->setAttrib('placeholder', 'Digite sua senha');
        
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setLabel('Acessar')
-               ->setAttrib('class', 'btn btn-primary btn-lg btn-block')
+               ->setAttrib('class', 'btn btn-primary')
                ->setAttrib('id', 'btn-acesssar');
 		       
         $this->addElements(array(

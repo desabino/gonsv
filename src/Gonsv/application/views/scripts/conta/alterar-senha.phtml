@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+		<form action="<?=$this->form->getAction();?>" name="<?=$this->form->getName();?>" method="<?=$this->form->getMethod();?>" role="<?=$this->form->getAttrib('role');?>">
+			<div class="form-group">
+				<label for="<?=$this->form->f_senha->getAttrib('id');?>"><?=$this->form->f_senha->getLabel();?></label>
+				<?=$this->form->f_senha;?>
+			</div>
+			<div class="form-group">
+				<label for="<?=$this->form->f_novasenha->getAttrib('id');?>"><?=$this->form->f_novasenha->getLabel();?></label>
+				<?=$this->form->f_novasenha;?>
+			</div>
+			<div class="form-group">
+				<label for="<?=$this->form->f_cnovasenha->getAttrib('id');?>"><?=$this->form->f_cnovasenha->getLabel();?></label>
+				<?=$this->form->f_cnovasenha;?>
+			</div>
+			<?=$this->form->submit;?>
+		</form>
+	</div>
+</div>

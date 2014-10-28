@@ -52,7 +52,8 @@ class AcessoController extends Zend_Controller_Action
                    
                     $currentRole = Model_Auth_Acesso::login($credenciais['email'], $credenciais['senha']);
                     
-                    $action = ($currentRole == admin)?'admin':'';
+                    //$action = ($currentRole == admin)?'admin':'';
+					$action = 'index';
                     
                     //Redireciona para o Controller protegido
                     return $this->_helper->redirector->goToRoute(array('controller' => 'dashboard', 'action' => $action), null, true);

@@ -20,11 +20,11 @@
 					<li class="dropdown">
 						<div class="avatar"><img src="<?=Util_Helper::basePath('/img/site/person.png');?>" alt=""></div>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							André <span class="caret"></span>
+							<?=$usuario->getFullName();?> <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Meus dados</a></li>
-							<li><a href="#">Fazer logoff</a></li>
+							<li><a href="/conta/alterar-senha">Alterar senha</a></li>
+							<li><a href="/acesso/sair">Fazer logoff</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -34,7 +34,7 @@ CREATE TABLE `conta` (
   PRIMARY KEY (`conta_id`),
   KEY `tipo_conta_idx` (`tipo`),
   CONSTRAINT `tipo_conta` FOREIGN KEY (`tipo`) REFERENCES `conta_tipo` (`conta_tipo_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,6 @@ CREATE TABLE `conta` (
 
 LOCK TABLES `conta` WRITE;
 /*!40000 ALTER TABLE `conta` DISABLE KEYS */;
-INSERT INTO `conta` VALUES (2,135,'Andrea Cristine Barbieri Ferreira','galganiac@hotmail.com','7c4a8d09ca3762af61e59520943dc26494f8941b',2),(3,134,'André dos Santos Sabino','de_ssabino@yahoo.com.br','33905895c9e5fa18a4f93092174b8af4d8bcdca2',1),(4,129,'Talitta Nascimento Silva Sabino','talitta_nasc@yahoo.com.br','7c4a8d09ca3762af61e59520943dc26494f8941b',2),(5,124,'Sandra Cristina da Silva e Silva','sandra.cris2@bol.com.br','7c4a8d09ca3762af61e59520943dc26494f8941b',3),(6,100,'Karen Cristina','karenrara@gmail.com','7c4a8d09ca3762af61e59520943dc26494f8941b',3),(7,76,'Carmen B. Silva',NULL,'7c4a8d09ca3762af61e59520943dc26494f8941b',3),(8,88,'Elisa Cristina Iório','ec.iorio@gmail.com','7c4a8d09ca3762af61e59520943dc26494f8941b',3);
 /*!40000 ALTER TABLE `conta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +58,7 @@ CREATE TABLE `conta_tipo` (
   `texto_identificacao` varchar(15) NOT NULL,
   `descricao` varchar(60) NOT NULL,
   PRIMARY KEY (`conta_tipo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +67,6 @@ CREATE TABLE `conta_tipo` (
 
 LOCK TABLES `conta_tipo` WRITE;
 /*!40000 ALTER TABLE `conta_tipo` DISABLE KEYS */;
-INSERT INTO `conta_tipo` VALUES (1,'admin','Administrador'),(2,'user','Usuário'),(3,'guest','Convidado');
 /*!40000 ALTER TABLE `conta_tipo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-28 22:27:02
+-- Dump completed on 2014-10-27 22:12:17

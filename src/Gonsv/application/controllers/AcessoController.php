@@ -90,6 +90,6 @@ class AcessoController extends Zend_Controller_Action
         $auth = Zend_Auth::getInstance();
         $auth->clearIdentity();
         
-        return $this->_helper->redirector->goToRoute(array('controller' => 'acesso'), null, true);
+        return $this->_helper->redirector->goToRoute(array('controller' => 'acesso', 'action' => 'index'), null, true);
     }
 }

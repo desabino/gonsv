@@ -8,7 +8,7 @@ class IndexController extends Zend_Controller_Action
     public function init()
     {
         $this->view->pageheader = "Home";
-        //$this->_helper->redirector->gotoUrl('/dashboard');
+        $this->_helper->redirector->gotoUrl('/acesso');
     }
  
     public function indexAction()

@@ -10,5 +10,5 @@ INSERT INTO conta(pessoa_id, nome, email, senha, tipo)
 
 SELECT * FROM conta;
 
-UPDATE conta SET tipo = 2 WHERE conta_id in(135, 129);
-UPDATE conta SET tipo = 1 WHERE conta_id in(134);
+UPDATE conta SET tipo = 2 WHERE pessoa_id in(135, 129);
+UPDATE conta SET tipo = 1 WHERE pessoa_id in(134);

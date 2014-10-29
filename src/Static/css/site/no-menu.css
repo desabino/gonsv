@@ -2,9 +2,9 @@
 
 body {
 	background-color: rgba(41, 73, 166, 1);
-    background-image: url(../../img/site/bg-home.png);
+    /*background-image: url(../../img/site/bg-home.png);
     background-position: center top;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
 	color: rgba(255, 255, 255, 1);
 	font-family: "Century Gothic", Tahoma, Arial, Sans Serif;
 }

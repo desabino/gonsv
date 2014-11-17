@@ -60,19 +60,42 @@
 			<div class="box-content">
 				Paróquia: <?=$this->pessoa['paroquia']; ?>
 				<br>
-				É batizado: <?=($this->pessoa['batizado'] == 1) ? 'Sim ' : 'Não'; ?>
+				É batizado: <?php 
+								if($this->pessoa['batizado'] == 'S') : echo 'Sim ';
+								elseif ($this->pessoa['batizado'] == 'N') : echo 'Não';
+								else: echo 'não informado';
+								endif;
+							?>
 				<?=($this->pessoa['batizado'] == 1) ? ' - na igreja ' . $this->pessoa['batizado_em_qual_igreja'] : ''; ?>
 				<br>
-				Fez catequese: <?=($this->pessoa['catequese'] == 1) ? 'Sim' : '';?>
+				Fez catequese: <?php 
+									if($this->pessoa['catequese'] == 'S') : echo 'Sim ';
+									elseif ($this->pessoa['catequese'] == 'N') : echo 'Não';
+									else: echo 'não informado';
+									endif;
+								?>
 				|
-				Fez crisma: <?=($this->pessoa['crisma'] == 1) ? 'Sim' : '';?>
+				Fez crisma: <?php 
+								if($this->pessoa['crisma'] == 'S') : echo 'Sim ';
+								elseif ($this->pessoa['crisma'] == 'N') : echo 'Não';
+								else: echo 'não informado';
+								endif;
+							?>
 				<br>
 				Estado Civil: <?=$this->pessoa['estado_civil_nome']; ?>
 				<br>
 				Casado em qual igreja: <?=$this->pessoa['casado_em_qual_igreja']?>
 				<br>
-				Participou de Grupo de Oração da RCC: <?=($this->pessoa['participou_go_rcc'] == 1) ? 'Sim' : 'Não';?><br> 
-				por quanto tempo: <?=$this->pessoa['quanto_tempo']?>
+				Participou de Grupo de Oração da RCC:
+					<?php if($this->pessoa['participou_go_rcc'] == 'S') : ?> 
+						Sim
+						<br>
+						por quanto tempo: <?=$this->pessoa['quanto_tempo']?>
+					<?php
+						elseif ($this->pessoa['participou_go_rcc'] == 'N') : echo 'Não';
+						else: echo 'não informado';
+						endif;
+					?>
 			</div>
 		</div>
 	</div>

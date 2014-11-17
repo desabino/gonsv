@@ -101,8 +101,12 @@ class ParticipantesController extends Zend_Controller_Action
         	
             // Populando dados
             $data['f_data_nasc'] = ($data['f_data_nasc'] != '') ? Util_Format_Date::DbToScreen($data['f_data_nasc'], 'date') : $data['f_data_nasc'] ;
-            $data['f_data_cadastro'] = ($data['f_data_cadastro'] != '') ? Util_Format_Date::DbToScreen($data['f_data_cadastro'], 'date') : $data['f_data_cadastro'] ;
+            $data['f_data_cadastro'] = ($data['f_data_cadastro'] != '') ? Util_Format_Date::DbToScreen($data['f_data_cadastro'], 'date') : $data['f_data_cadastro'];
             $form->populate($data);
+			echo '<pre>';
+			print_r($form);
+			exit;
+			$form->f_batizado->setValue($data['f_batizado']);
         }
 		
 		$estados_civis = $this->_dbes->listaEstadosCivis();

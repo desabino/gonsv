@@ -14,8 +14,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Id da pessoa')
 				        ->setAttrib('id', 'f-pessoa-id')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Id da pessoa');
+				        ->setAttrib('class', 'form-control');
 		
 		$nome = new Zend_Form_Element_Text('f_nome');
 		$nome->setRequired(true)
@@ -25,8 +24,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Nome')
 				        ->setAttrib('id', 'f-nome')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Nome');
+				        ->setAttrib('class', 'form-control');
 		
 		$data_nasc = new Zend_Form_Element_Text('f_data_nasc');
 		$data_nasc->setRequired(false)
@@ -35,8 +33,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Data de nascimento')
 				        ->setAttrib('id', 'f-data-nasc')
-				        ->setAttrib('class', 'form-control f-date')
-				        ->setAttrib('placeholder', 'Data de nascimento');
+				        ->setAttrib('class', 'form-control f-date');
 		
 		$endereco = new Zend_Form_Element_Text('f_endereco');
 		$endereco->setRequired(false)
@@ -45,8 +42,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Endereço')
 				        ->setAttrib('id', 'f-endereco')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Endereço');
+				        ->setAttrib('class', 'form-control');
 		
 		$numero = new Zend_Form_Element_Text('f_numero');
 		$numero->setRequired(false)
@@ -56,7 +52,6 @@ class Form_Pessoa extends Zend_Form
 				        ->setLabel('Número')
 				        ->setAttrib('id', 'f-numero')
 				        ->setAttrib('class', 'form-control f-numero')
-				        ->setAttrib('placeholder', 'Número')
 				        ->setAttrib('maxLength', '5');
 		
 		$complemento = new Zend_Form_Element_Text('f_complemento');
@@ -66,8 +61,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Complemento')
 				        ->setAttrib('id', 'f-complemento')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Complemento');
+				        ->setAttrib('class', 'form-control');
 		
 		$bairro = new Zend_Form_Element_Text('f_bairro');
 		$bairro->setRequired(false)
@@ -76,8 +70,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Bairro')
 				        ->setAttrib('id', 'f-bairro')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Bairro');
+				        ->setAttrib('class', 'form-control');
 		
 		$cidade = new Zend_Form_Element_Text('f_cidade');
 		$cidade->setRequired(false)
@@ -86,8 +79,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Cidade')
 				        ->setAttrib('id', 'f-cidade')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Cidade');
+				        ->setAttrib('class', 'form-control');
 		
 		$uf = new Zend_Form_Element_Text('f_uf');
 		$uf->setRequired(false)
@@ -97,7 +89,6 @@ class Form_Pessoa extends Zend_Form
 				        ->setLabel('UF')
 				        ->setAttrib('id', 'f-uf')
 				        ->setAttrib('class', 'form-control f-uf')
-				        ->setAttrib('placeholder', 'UF')
 				        ->setAttrib('maxLength', '2');
 		
 		$cep = new Zend_Form_Element_Text('f_cep');
@@ -107,8 +98,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('CEP')
 				        ->setAttrib('id', 'f-cep')
-				        ->setAttrib('class', 'form-control f-cep')
-				        ->setAttrib('placeholder', 'CEP');
+				        ->setAttrib('class', 'form-control f-cep');
 		
 		$telefone = new Zend_Form_Element_Text('f_telefone');
 		$telefone->setRequired(false)
@@ -117,8 +107,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Telefone')
 				        ->setAttrib('id', 'f-telefone')
-				        ->setAttrib('class', 'form-control f-phone')
-				        ->setAttrib('placeholder', 'Telefone');
+				        ->setAttrib('class', 'form-control f-phone');
 		
 		$telefone2 = new Zend_Form_Element_Text('f_telefone2');
 		$telefone2->setRequired(false)
@@ -127,8 +116,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Telefone 2')
 				        ->setAttrib('id', 'f-telefone2')
-				        ->setAttrib('class', 'form-control f-phone')
-				        ->setAttrib('placeholder', 'Telefone 2');
+				        ->setAttrib('class', 'form-control f-phone');
 		
 		$celular = new Zend_Form_Element_Text('f_celular');
 		$celular->setRequired(false)
@@ -137,8 +125,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Celular')
 				        ->setAttrib('id', 'f-celular')
-				        ->setAttrib('class', 'form-control f-cellphone')
-				        ->setAttrib('placeholder', 'Celular');
+				        ->setAttrib('class', 'form-control f-cellphone');
 		
 		$celular2 = new Zend_Form_Element_Text('f_celular2');
 		$celular2->setRequired(false)
@@ -147,8 +134,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Celular 2')
 				        ->setAttrib('id', 'f-celular2')
-				        ->setAttrib('class', 'form-control f-cellphone')
-				        ->setAttrib('placeholder', 'Celular 2');
+				        ->setAttrib('class', 'form-control f-cellphone');
 		
 		$email = new Zend_Form_Element_Text('f_email');
 		$email->setRequired(false)
@@ -157,8 +143,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('E-mail')
 				        ->setAttrib('id', 'f-email')
-				        ->setAttrib('class', 'form-control f-email')
-				        ->setAttrib('placeholder', 'E-mail');
+				        ->setAttrib('class', 'form-control f-email');
 		
 		$paroquia = new Zend_Form_Element_Text('f_paroquia');
 		$paroquia->setRequired(false)
@@ -167,17 +152,23 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Paróquia')
 				        ->setAttrib('id', 'f-paroquia')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Paróquia');
+				        ->setAttrib('class', 'form-control');
 				        
-		$batizado = new Zend_Form_Element_Checkbox('f_batizado');
+		$batizado = new Zend_Form_Element_Select('f_batizado');
         $batizado->setRequired(false)
-            ->addFilter('StripTags')
-            ->addFilter('StringTrim')
-            ->setValue('')
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->setRegisterInArrayValidator(false)
+			   ->setMultiOptions(array(
+									'' => '(escolha)',
+									'S' => 'Sim',
+									'N'=>'Não'
+									)
+								)
             ->setLabel('Batizado?')
             ->setAttrib('id', 'f-batizado')
-            ->setAttrib('placeholder', 'Batizado?');
+            ->setAttrib('class', 'form-control')
+			->setSeparator('');
 		
 		$batizado_em_qual_igreja = new Zend_Form_Element_Text('f_batizado_em_qual_igreja');
 		$batizado_em_qual_igreja->addFilter('StripTags')
@@ -185,26 +176,39 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Batizado em qual igreja')
 				        ->setAttrib('id', 'f-batizado_em_qual_igreja')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Batizado em qual igreja');
+				        ->setAttrib('class', 'form-control');
 				        
-		$catequese = new Zend_Form_Element_Checkbox('f_catequese');
+		$catequese = new Zend_Form_Element_Select('f_catequese');
         $catequese->setRequired(false)
-            ->addFilter('StripTags')
-            ->addFilter('StringTrim')
-            ->setValue('')
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->setRegisterInArrayValidator(false)
+			   ->setMultiOptions(array(
+									'' => '(escolha)',
+									'S' => 'Sim',
+									'N'=>'Não'
+									)
+								)
             ->setLabel('Catequese?')
             ->setAttrib('id', 'f-catequese')
-            ->setAttrib('placeholder', 'Catequese?');
+            ->setAttrib('class', 'form-control')
+			->setSeparator('');
 				        
-		$crisma = new Zend_Form_Element_Checkbox('f_crisma');
+		$crisma = new Zend_Form_Element_Select('f_crisma');
         $crisma->setRequired(false)
-            ->addFilter('StripTags')
-            ->addFilter('StringTrim')
-            ->setValue('')
-            ->setLabel('Crismado?')
-            ->setAttrib('id', 'f-crisma')
-            ->setAttrib('placeholder', 'Crismado?');
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->setRegisterInArrayValidator(false)
+			   ->setMultiOptions(array(
+									'' => '(escolha)',
+									'S' => 'Sim',
+									'N'=>'Não'
+									)
+								)
+               ->setLabel('Crismado?')
+               ->setAttrib('id', 'f-crisma')
+               ->setAttrib('class', 'form-control')
+			   ->setSeparator('');
        
        $estado_civil = new Zend_Form_Element_Select('f_estado_civil');
        $estado_civil->setRequired(false)
@@ -214,8 +218,7 @@ class Form_Pessoa extends Zend_Form
                ->setValue('')
                ->setLabel('Estado Civil')
                ->setAttrib('id', 'f-estado_civil')
-               ->setAttrib('class', 'form-control')
-               ->setAttrib('placeholder', 'Estado Civil');
+               ->setAttrib('class', 'form-control');
 		
 		$casado_em_qual_igreja = new Zend_Form_Element_Text('f_casado_em_qual_igreja');
 		$casado_em_qual_igreja->setRequired(false)
@@ -224,17 +227,23 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Se casado, em qual igreja')
 				        ->setAttrib('id', 'f-casado_em_qual_igreja')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Se casado, em qual igreja');
+				        ->setAttrib('class', 'form-control');
 				        
-		$participou_go_rcc = new Zend_Form_Element_Checkbox('f_participou_go_rcc');
+		$participou_go_rcc = new Zend_Form_Element_Select('f_participou_go_rcc');
         $participou_go_rcc->setRequired(false)
-            ->addFilter('StripTags')
-            ->addFilter('StringTrim')
-            ->setValue('')
+               ->addFilter('StripTags')
+               ->addFilter('StringTrim')
+               ->setRegisterInArrayValidator(false)
+			   ->setMultiOptions(array(
+									'' => '(escolha)',
+									'S' => 'Sim',
+									'N'=>'Não'
+									)
+								)
             ->setLabel('Participa da RCC?')
             ->setAttrib('id', 'f-participou_go_rcc')
-            ->setAttrib('placeholder', 'Participa da RCC?');
+            ->setAttrib('class', 'form-control')
+			->setSeparator('');
 		
 		$quanto_tempo = new Zend_Form_Element_Text('f_quanto_tempo');
 		$quanto_tempo->setRequired(false)
@@ -243,8 +252,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Há quanto tempo')
 				        ->setAttrib('id', 'f-quanto_tempo')
-				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Há quanto tempo');
+				        ->setAttrib('class', 'form-control');
 		
 		$data_cadastro = new Zend_Form_Element_Text('f_data_cadastro');
 		$data_cadastro->setRequired(false)
@@ -253,8 +261,7 @@ class Form_Pessoa extends Zend_Form
 				        ->setValue('')
 				        ->setLabel('Data de cadastro')
 				        ->setAttrib('id', 'f-data_cadastro')
-				        ->setAttrib('class', 'form-control f-date')
-				        ->setAttrib('placeholder', 'Data de cadastro');
+				        ->setAttrib('class', 'form-control f-date');
 		
 		$observacao = new Zend_Form_Element_Textarea('f_observacao');
 		$observacao->setRequired(false)
@@ -264,7 +271,6 @@ class Form_Pessoa extends Zend_Form
 				        ->setLabel('Observação')
 				        ->setAttrib('id', 'f-observacao')
 				        ->setAttrib('class', 'form-control')
-				        ->setAttrib('placeholder', 'Observação')
 				        ->setAttrib('rows', '3');
 		
 		$submit = new Zend_Form_Element_Submit('submit');

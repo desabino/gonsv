@@ -117,10 +117,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		
         // Definindo js default
         $view->js = array ('/js/jquery/jquery.js',
-        				   '/js/util/bootstrap.min.js',
         				   '/js/jquery/fancybox/fancybox.js',        				   
         				   '/js/jquery/mask.min.js',
         				   '/js/jquery/livefilter.min.js',
+        				   '/js/util/bootstrap.min.js',
         				   '/js/site/site.js'
         				  );
     }
